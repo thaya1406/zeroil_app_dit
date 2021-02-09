@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="page_list">
+        <item>Basic Information on Handling Used Oil at Home</item>
+        <item>The Benefits of Reusing and Recycling Used Oil</item>
+        <item>How it Works: Recycling Used Oil and Oil Filters</item>
+    </string-array>
+</resources>
