@@ -28,6 +28,7 @@ public class UserProfile extends AppCompatActivity {
     String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
     String name;
     SharedPreferences prf;
+    SharedPreferences trial;
 
 
 DBHelper DB;
