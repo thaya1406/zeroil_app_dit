@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.ActivityOptions;
 import android.os.Handler;
 import android.util.Pair;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Animation topAnim, bottomAnim;
     ImageView image;
     TextView logo, slogan;
+    ImageButton btn_profile, btn_home, btn_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         //This Line will hide the status bar from the screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        //Image button
+        btn_profile = (ImageButton) findViewById(R.id.profile_button);
+        btn_home = (ImageButton) findViewById(R.id.home_button);
+        btn_logout = (ImageButton) findViewById(R.id.logout_button);
 
         //Hooks
         image = findViewById(R.id.imageView);
@@ -43,6 +51,33 @@ public class MainActivity extends AppCompatActivity {
         image.setAnimation(topAnim);
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
+
+        //Event handling for image buttons
+        btn_profile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, UserProfile.class);
+                startActivity(intent);
+            }
+
+        });
+
+        btn_home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"You're already at the homepage", Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+        btn_logout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
         ConstraintLayout layout = findViewById(R.id.layout);
         layout.setOnClickListener(new View.OnClickListener() {
