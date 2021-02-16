@@ -5,17 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/lightgray" >
+    android:background="#FDFDFD"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/GoRecyle"
         android:layout_width="303dp"
         android:layout_height="166dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/custom_button"
-        app:layout_constraintBottom_toTopOf="@+id/Goprofile"
+        app:layout_constraintBottom_toTopOf="@+id/GoLearn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,26 +31,25 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/GoRecyle"
         app:layout_constraintTop_toTopOf="@+id/GoRecyle"
-        app:srcCompat="@drawable/alltransrecycle"
+        app:srcCompat="@drawable/trans_recycle"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/titleRecycle"
         android:layout_width="89dp"
         android:layout_height="27dp"
-
         android:elevation="100dp"
         android:fontFamily="@font/lalezar"
         android:text="Go Recycle"
-        android:textColor="#FFFEFC"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
+        app:layout_constraintBottom_toBottomOf="@+id/GoRecyle"
         app:layout_constraintEnd_toStartOf="@+id/imgRecycle"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133"
+        app:layout_constraintVertical_bias="0.707"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -69,75 +67,18 @@
         app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleRecycle"
-        app:layout_constraintVertical_bias="0.043"
-        tools:ignore="MissingConstraints" />
-
-
-    <Button
-        android:id="@+id/Goprofile"
-        android:layout_width="303dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/custom_button"
-        app:layout_constraintBottom_toTopOf="@+id/GoLearn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GoRecyle"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/titleShare"
-        android:layout_width="89dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="88dp"
-        android:elevation="100dp"
-        android:fontFamily="@font/lalezar"
-        android:text="Go Share"
-        android:textColor="#FFFEFC"
-        android:textSize="18sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
-        app:layout_constraintEnd_toEndOf="@+id/Goprofile"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textShare"
-        android:layout_width="122dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:elevation="100dp"
-        android:fontFamily="@font/bree_serif"
-        android:text="Explore ways you can inform others"
-        android:textColor="#FFFEFC"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/Goprofile"
-        app:layout_constraintEnd_toEndOf="@+id/Goprofile"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleShare"
-        app:layout_constraintVertical_bias="0.137"
+        app:layout_constraintVertical_bias="0.069"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/GoLearn"
         android:layout_width="303dp"
         android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/custom_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GoRecyle"
+        app:layout_constraintBottom_toTopOf="@+id/profile_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Goprofile"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -158,19 +99,18 @@
         android:id="@+id/titleLearn"
         android:layout_width="89dp"
         android:layout_height="27dp"
-        android:layout_marginTop="88dp"
         android:elevation="100dp"
         android:fontFamily="@font/lalezar"
         android:text="Go Learn"
-        android:textColor="#FFFEFC"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
         app:layout_constraintEnd_toStartOf="@+id/imgLearn"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
+        app:layout_constraintVertical_bias="0.814"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -180,7 +120,6 @@
         android:elevation="100dp"
         android:fontFamily="@font/bree_serif"
         android:text="Become a guru of recycling and using"
-        android:textAlignment="viewStart"
         android:textColor="#FFFEFC"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -189,9 +128,39 @@
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleLearn"
-        app:layout_constraintVertical_bias="0.322"
-        tools:ignore="MissingConstraints"
-        android:layout_gravity="start" />
+        app:layout_constraintVertical_bias="0.313"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/profile_button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logout_button"
+        app:layout_constraintStart_toEndOf="@+id/home_button"
+        app:srcCompat="@drawable/ic_action_name" />
+
+    <ImageButton
+        android:id="@+id/logout_button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logoutbtn"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_homebtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 package com.app.zeroil;
 
 public class UserModel {
-    String name, username, email, password;
+    String name, username, email, password,contact;
 
     public UserModel() {
     }
@@ -11,6 +11,14 @@ public class UserModel {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getName() {
