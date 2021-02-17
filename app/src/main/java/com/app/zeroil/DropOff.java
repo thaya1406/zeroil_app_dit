@@ -12,8 +12,7 @@ import java.util.ArrayList;
 
 public class DropOff extends AppCompatActivity{
 
-    Intent intent;
-    ListView dropofflist;
+        ListView dropofflist;
     CustomAdapter customAdapter;
     ArrayList<DropOffModel> arrayList;
     DropOffModel dm;

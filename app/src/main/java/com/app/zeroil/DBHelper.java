@@ -63,42 +63,34 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public Boolean updatePassword(String username, String ps){
+    public void updatePassword(String username, String ps){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_PASSWORD + " = ?", new String[]{ps});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
+        String strSQL = "UPDATE " + TABLE_USERS + " SET " + COLUMN_PASSWORD + " = "+ ps + " WHERE " + COLUMN_USERNAME + " = " + username;
+        MyDB.execSQL(strSQL);
+
+      // Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_PASSWORD + " = ? ", new String[]{ps});
+
+
     }
 
-    public Boolean updateName(String username, String nm){
+    public void updateName(String username, String nm){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_FULLNAME + " = ?", new String[]{nm});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
+
     }
 
 
-    public Boolean updateEmail(String username, String em){
+    public void updateEmail(String username, String em){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USEREMAIL + " = ?", new String[]{em});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
+
     }
 
 
-    public Boolean updateUsername(String username, String uname){
+    public void updateUsername(String username, String uname){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USERNAME + " = ?", new String[]{uname});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
+
     }
 
 

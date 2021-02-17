@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -98,75 +99,68 @@ DBHelper DB;
         password.getEditText().setText(_PASSWORD);
 
 
-         updatebtn.setOnClickListener(this::onClick);
+
+
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(UserProfile.this, "Data Updated Succesfully",Toast.LENGTH_LONG).show();
+
+
+                    if (username.getEditText().getText().toString().isEmpty()) {
+                        username.setError("Field cannot be empty");
+                    } else {
+                        String ustochnage = username.getEditText().getText().toString();
+                        String strSQL;
+                        strSQL = String.format("UPDATE  users  SET username = '%s' WHERE username = '%s'",ustochnage,untoserach);
+                        MyDB.execSQL(strSQL);
+                        _USERNAME = username.getEditText().getText().toString();
+                        username.getEditText().setText(_USERNAME);
+                    }
+
+
+                if (password.getEditText().getText().toString().isEmpty()) {
+                    password.setError("Field cannot be empty");
+                } else {
+                    String pstochange = password.getEditText().getText().toString();
+                    String strSQL;
+                    strSQL = String.format("UPDATE  users  SET password = '%s' WHERE username = '%s'",pstochange,untoserach);
+                    MyDB.execSQL(strSQL);
+                    _PASSWORD = password.getEditText().getText().toString();
+                    password.getEditText().setText(_PASSWORD);
+                }
+
+
+                if (email.getEditText().getText().toString().isEmpty()) {
+                    email.setError("Field cannot be empty");
+                } else {
+                    String emtochange = email.getEditText().getText().toString();
+                    String strSQL;
+                    strSQL = String.format("UPDATE  users  SET email = '%s' WHERE username = '%s'",emtochange,untoserach);
+                    MyDB.execSQL(strSQL);
+                    _EMAIL = email.getEditText().getText().toString();
+                    email.getEditText().setText(_EMAIL);
+                }
+
+                if (fullName.getEditText().getText().toString().isEmpty()) {
+                    fullName.setError("Field cannot be empty");
+                } else {
+                    String emtochange = fullName.getEditText().getText().toString();
+                    String strSQL;
+                    strSQL = String.format("UPDATE  users  SET fname = '%s' WHERE username = '%s'",emtochange,untoserach);
+                    MyDB.execSQL(strSQL);
+                    _NAME = fullName.getEditText().getText().toString();
+                    fullName.getEditText().setText(_NAME);
+                }
+
+
+            }
+
+        });
+
 
     }
 
-    public void update() {
-        Boolean checkuser;
-         checkuser = DB.updatePassword(_USERNAME, password.getEditText().getText().toString());
-        _PASSWORD = password.getEditText().getText().toString();
-        password.getEditText().setText(_PASSWORD);
-
-         checkuser = DB.updateUsername(_USERNAME, username.getEditText().getText().toString());
-        _USERNAME = username.getEditText().getText().toString();
-        username.getEditText().setText(_USERNAME);
-
-        checkuser = DB.updateEmail(_EMAIL, email.getEditText().getText().toString());
-        _EMAIL = email.getEditText().getText().toString();
-        email.getEditText().setText(_EMAIL);
-
-        checkuser = DB.updateName(_NAME, fullName.getEditText().getText().toString());
-        _NAME = fullName.getEditText().getText().toString();
-        fullName.getEditText().setText(_NAME);
 
 
-        if(checkuser)
-        {   Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();}
-
-        else
-        {Toast.makeText(this, "Data is same and can not be updated", Toast.LENGTH_LONG).show();}
-
-    }
-
-  /**  private boolean isPasswordChanged() {
-     try {
-         if (!_PASSWORD.equals(password.getEditText().getText().toString())) {
-             Boolean checkuser = DB.updatePassword(_USERNAME, password.getEditText().getText().toString());
-             _PASSWORD = password.getEditText().getText().toString();
-             password.getEditText().setText(_PASSWORD);
-
-             return true;
-         } else {
-             return false;
-         }
-     }
-
-     catch (Exception e)
-     {
-
-         Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-         return false;
-
-     }
-    }**/
-
-    /** private boolean isUserNameChanged() {
-
-        if (!_USERNAME.equals(username.getEditText().getText().toString())) {
-
-            Boolean checkuser = DB.updateUsername(_USERNAME, username.getEditText().getText().toString());
-            _USERNAME = username.getEditText().getText().toString();
-            username.getEditText().setText(_USERNAME);
-            return true;
-        } else {
-            return false;
-        }
-
-    }**/
-
-    private void onClick(View view)
-    {
-        update();
-    }
 }

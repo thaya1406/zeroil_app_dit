@@ -52,8 +52,7 @@ public class CustomAdapter extends BaseAdapter {
         address = (TextView) convertView.findViewById(R.id.address);
         email = (TextView) convertView.findViewById(R.id.email);
         contact = (TextView) convertView.findViewById(R.id.contact);
-        lat = (TextView) convertView.findViewById(R.id.lat);
-        longi = (TextView) convertView.findViewById(R.id.longi);
+
 
 
         DropOffModel DO = Item.get(position);
@@ -61,8 +60,7 @@ public class CustomAdapter extends BaseAdapter {
         address.setText(DO.getAddress());
         email.setText(DO.getEmail());
         contact.setText(DO.getContact());
-       lat.setText(DO.getLat());
-       longi.setText(DO.getLongi());
+
 
 
         return convertView;
