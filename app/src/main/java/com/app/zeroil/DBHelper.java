@@ -17,7 +17,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_FULLNAME = "fname";
     public static final String COLUMN_USEREMAIL = "email";
-    public static final String COLUMN_USERCONTACT = "contact";
     public static final String COLUMN_PASSWORD = "password";
 
     public static final String TABLE_DROPOFF = "dropoff";
@@ -37,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table " + TABLE_USERS + " ( " + COLUMN_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT," + COLUMN_FULLNAME + " TEXT," +COLUMN_USEREMAIL+ " TEXT," +  COLUMN_USERCONTACT+ " TEXT )   ");
+        MyDB.execSQL("create Table " + TABLE_USERS + " ( " + COLUMN_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT," + COLUMN_FULLNAME + " TEXT," +COLUMN_USEREMAIL+ " TEXT)   ");
         MyDB.execSQL("create Table " + TABLE_DROPOFF + " ( " + COLUMN_DROPPOFFID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, " + COLUMN_EMAIL + " TEXT, "  + COLUMN_ADDRESS + " TEXT,  " + COLUMN_LAT + " TEXT, " + COLUMN_LONG + " TEXT, " + COLUMN_CONTACT + " TEXT ) ");
 
 
@@ -86,16 +85,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public Boolean updateEmail(String username, String em){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USEREMAIL + " = ?", new String[]{em});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
-    }
-
-
-    public Boolean updateContact(String username, String cn){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USERCONTACT + " = ?", new String[]{cn});
         if (cursor.getCount() > 0)
             return true;
         else

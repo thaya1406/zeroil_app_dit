@@ -22,7 +22,7 @@ public class UserProfile extends AppCompatActivity {
     TextInputLayout fullName, email, username, password;
     TextView fullNameLabel, usernameLabel;
     Button updatebtn;
-    private ProgressDialog loading;
+    private ProgressDialog loadingg;
     private AlertDialog dialog;
     //Global Variables to hold user data inside this activity
     String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
@@ -38,7 +38,6 @@ DBHelper DB;
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_FULLNAME = "fname";
     public static final String COLUMN_USEREMAIL = "email";
-    public static final String COLUMN_USERCONTACT = "contact";
     public static final String COLUMN_PASSWORD = "password";
     public final DBHelper helper = new DBHelper(this);
 
@@ -60,10 +59,10 @@ DBHelper DB;
         usernameLabel = findViewById(R.id.username_field);
         updatebtn = findViewById(R.id.updatebtn);
 
-        loading = new ProgressDialog(this);
-        loading.setIndeterminate(true);
-        loading.setCancelable(false);
-        loading.setCanceledOnTouchOutside(false);
+        loadingg = new ProgressDialog(this);
+        loadingg.setIndeterminate(true);
+        loadingg.setCancelable(false);
+        loadingg.setCanceledOnTouchOutside(false);
 
 
 
@@ -81,7 +80,6 @@ DBHelper DB;
                 UO.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
                 UO.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)) );
                 UO.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USEREMAIL)) );
-                UO.setContact(cursor.getString(cursor.getColumnIndex(COLUMN_USERCONTACT)) );
                 UO.setName(cursor.getString(cursor.getColumnIndex(COLUMN_FULLNAME)) );
 
                 Intent intent = getIntent();
@@ -89,7 +87,6 @@ DBHelper DB;
                 _USERNAME = UO.getUsername();
                 _NAME = UO.getName();
                 _EMAIL = UO.getEmail();
-                _PHONENO = UO.getContact();
                 _PASSWORD = UO.getPassword();
             } while (cursor.moveToNext());
 
@@ -108,8 +105,6 @@ DBHelper DB;
 
     }
 
-
-
     public void update() {
         Boolean checkuser;
          checkuser = DB.updatePassword(_USERNAME, password.getEditText().getText().toString());
@@ -119,6 +114,15 @@ DBHelper DB;
          checkuser = DB.updateUsername(_USERNAME, username.getEditText().getText().toString());
         _USERNAME = username.getEditText().getText().toString();
         username.getEditText().setText(_USERNAME);
+
+        checkuser = DB.updateEmail(_EMAIL, email.getEditText().getText().toString());
+        _EMAIL = email.getEditText().getText().toString();
+        email.getEditText().setText(_EMAIL);
+
+        checkuser = DB.updateName(_NAME, fullName.getEditText().getText().toString());
+        _NAME = fullName.getEditText().getText().toString();
+        fullName.getEditText().setText(_NAME);
+
 
         if(checkuser)
         {   Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();}

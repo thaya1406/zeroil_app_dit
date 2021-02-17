@@ -112,8 +112,7 @@ public class LoginActivity extends AppCompatActivity {
         Boolean checkuser = DB.checkusernamepassword(userEnteredUsername, userEnteredPassword);
         if (checkuser) {
             Toast.makeText(this, "Login Succesfull", Toast.LENGTH_SHORT).show();
-            Intent intentt;
-            intentt = new Intent(this,HomePageActivity.class );
+            Intent intentt = new Intent(getApplicationContext(), HomePageActivity.class);
             startActivity(intentt);
 
         } else {
