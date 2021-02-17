@@ -27,6 +27,8 @@ public class UserProfile extends AppCompatActivity {
     //Global Variables to hold user data inside this activity
     String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
     String name;
+    String namee;
+
     SharedPreferences prf;
     SharedPreferences trial;
 
