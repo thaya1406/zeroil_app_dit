@@ -22,21 +22,16 @@ public class UserProfile extends AppCompatActivity {
     TextInputLayout fullName, email, username, password;
     TextView fullNameLabel, usernameLabel;
     Button updatebtn;
-    private ProgressDialog loadingg;
-    private AlertDialog dialog;
+    private ProgressDialog loading;
     //Global Variables to hold user data inside this activity
-    String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
-    String name;
-    String namee;
+    String _USERNAME, _NAME, _EMAIL,  _PASSWORD;
 
     SharedPreferences prf;
-    SharedPreferences trial;
 
 
 DBHelper DB;
 
     public static final String TABLE_USERS = "users";
-    public static final String COLUMN_USERID = "userid";
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_FULLNAME = "fname";
     public static final String COLUMN_USEREMAIL = "email";
@@ -61,10 +56,10 @@ DBHelper DB;
         usernameLabel = findViewById(R.id.username_field);
         updatebtn = findViewById(R.id.updatebtn);
 
-        loadingg = new ProgressDialog(this);
-        loadingg.setIndeterminate(true);
-        loadingg.setCancelable(false);
-        loadingg.setCanceledOnTouchOutside(false);
+        loading = new ProgressDialog(this);
+        loading.setIndeterminate(true);
+        loading.setCancelable(false);
+        loading.setCanceledOnTouchOutside(false);
 
 
 
