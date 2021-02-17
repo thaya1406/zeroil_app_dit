@@ -2,15 +2,21 @@ package com.app.zeroil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    Button btnrecycle, btngolearn , btnprofile;
-
+    Button btnrecycle, btngolearn ;
+    ImageButton btn_profile,btn_home,btn_logout;
+    SharedPreferences preff;
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +24,9 @@ public class HomePageActivity extends AppCompatActivity {
 
         btnrecycle = (Button) findViewById(R.id.GoRecyle);
         btngolearn = (Button) findViewById(R.id.GoLearn);
-        btnprofile = (Button) findViewById(R.id.Goprofile);
-
+        btn_profile = (ImageButton) findViewById(R.id.profile_button);
+        btn_home = (ImageButton) findViewById(R.id.home_button);
+        btn_logout = (ImageButton) findViewById(R.id.logout_button);
 
         btnrecycle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +52,7 @@ public class HomePageActivity extends AppCompatActivity {
 
 
 
-        btnprofile.setOnClickListener(new View.OnClickListener() {
+        btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -57,6 +64,28 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
 
+
+        btn_home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HomePageActivity.this,"You're already at the homepage", Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+        btn_logout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+
+                SharedPreferences settings = context.getSharedPreferences("username", Context.MODE_PRIVATE);
+                settings.edit().clear().commit();
+
+                Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
     }
 

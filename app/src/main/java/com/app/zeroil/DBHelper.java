@@ -17,7 +17,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_FULLNAME = "fname";
     public static final String COLUMN_USEREMAIL = "email";
-    public static final String COLUMN_USERCONTACT = "contact";
     public static final String COLUMN_PASSWORD = "password";
 
     public static final String TABLE_DROPOFF = "dropoff";
@@ -37,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table " + TABLE_USERS + " ( " + COLUMN_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT)");
+        MyDB.execSQL("create Table " + TABLE_USERS + " ( " + COLUMN_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT," + COLUMN_FULLNAME + " TEXT," +COLUMN_USEREMAIL+ " TEXT)   ");
         MyDB.execSQL("create Table " + TABLE_DROPOFF + " ( " + COLUMN_DROPPOFFID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, " + COLUMN_EMAIL + " TEXT, "  + COLUMN_ADDRESS + " TEXT,  " + COLUMN_LAT + " TEXT, " + COLUMN_LONG + " TEXT, " + COLUMN_CONTACT + " TEXT ) ");
 
 
@@ -50,11 +49,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertData(String username, String password){
+    public Boolean insertData(String username, String password, String email,  String fullname){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put(COLUMN_USERNAME, username);
         contentValues.put(COLUMN_PASSWORD, password);
+        contentValues.put(COLUMN_USEREMAIL, email);
+        contentValues.put(COLUMN_FULLNAME, fullname);
+
         long result = MyDB.insert(TABLE_USERS, null, contentValues);
         if(result==-1) return false;
         else
@@ -69,6 +71,26 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
+    public Boolean updateName(String username, String nm){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_FULLNAME + " = ?", new String[]{nm});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+
+    public Boolean updateEmail(String username, String em){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USEREMAIL + " = ?", new String[]{em});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
 
     public Boolean updateUsername(String username, String uname){
         SQLiteDatabase MyDB = this.getWritableDatabase();

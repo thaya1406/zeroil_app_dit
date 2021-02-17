@@ -22,11 +22,13 @@ public class UserProfile extends AppCompatActivity {
     TextInputLayout fullName, email, username, password;
     TextView fullNameLabel, usernameLabel;
     Button updatebtn;
-    private ProgressDialog loading;
+    private ProgressDialog loadingg;
     private AlertDialog dialog;
     //Global Variables to hold user data inside this activity
     String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
     String name;
+    String namee;
+
     SharedPreferences prf;
     SharedPreferences trial;
 
@@ -38,7 +40,6 @@ DBHelper DB;
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_FULLNAME = "fname";
     public static final String COLUMN_USEREMAIL = "email";
-    public static final String COLUMN_USERCONTACT = "contact";
     public static final String COLUMN_PASSWORD = "password";
     public final DBHelper helper = new DBHelper(this);
 
@@ -60,10 +61,10 @@ DBHelper DB;
         usernameLabel = findViewById(R.id.username_field);
         updatebtn = findViewById(R.id.updatebtn);
 
-        loading = new ProgressDialog(this);
-        loading.setIndeterminate(true);
-        loading.setCancelable(false);
-        loading.setCanceledOnTouchOutside(false);
+        loadingg = new ProgressDialog(this);
+        loadingg.setIndeterminate(true);
+        loadingg.setCancelable(false);
+        loadingg.setCanceledOnTouchOutside(false);
 
 
 
@@ -80,22 +81,24 @@ DBHelper DB;
 
                 UO.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
                 UO.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)) );
+                UO.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USEREMAIL)) );
+                UO.setName(cursor.getString(cursor.getColumnIndex(COLUMN_FULLNAME)) );
+
                 Intent intent = getIntent();
 
                 _USERNAME = UO.getUsername();
-                //_NAME = intent.getStringExtra("name");
-                //_EMAIL = intent.getStringExtra("email");
-                //_PHONENO = intent.getStringExtra("phoneNo");
+                _NAME = UO.getName();
+                _EMAIL = UO.getEmail();
                 _PASSWORD = UO.getPassword();
             } while (cursor.moveToNext());
 
         }
 
         //ShowAllData
-        // fullNameLabel.setText(_NAME);
+        fullNameLabel.setText(_NAME);
         usernameLabel.setText(_USERNAME);
-        // fullName.getEditText().setText(_NAME);
-        // email.getEditText().setText(_EMAIL);
+        fullName.getEditText().setText(_NAME);
+        email.getEditText().setText(_EMAIL);
         username.getEditText().setText(_USERNAME);
         password.getEditText().setText(_PASSWORD);
 
@@ -104,18 +107,34 @@ DBHelper DB;
 
     }
 
-
-
     public void update() {
+        Boolean checkuser;
+         checkuser = DB.updatePassword(_USERNAME, password.getEditText().getText().toString());
+        _PASSWORD = password.getEditText().getText().toString();
+        password.getEditText().setText(_PASSWORD);
 
-        if (isUserNameChanged() || isPasswordChanged()) {
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-        }
-        else Toast.makeText(this, "Data is same and can not be updated", Toast.LENGTH_LONG).show();
+         checkuser = DB.updateUsername(_USERNAME, username.getEditText().getText().toString());
+        _USERNAME = username.getEditText().getText().toString();
+        username.getEditText().setText(_USERNAME);
+
+        checkuser = DB.updateEmail(_EMAIL, email.getEditText().getText().toString());
+        _EMAIL = email.getEditText().getText().toString();
+        email.getEditText().setText(_EMAIL);
+
+        checkuser = DB.updateName(_NAME, fullName.getEditText().getText().toString());
+        _NAME = fullName.getEditText().getText().toString();
+        fullName.getEditText().setText(_NAME);
+
+
+        if(checkuser)
+        {   Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();}
+
+        else
+        {Toast.makeText(this, "Data is same and can not be updated", Toast.LENGTH_LONG).show();}
 
     }
 
-    private boolean isPasswordChanged() {
+  /**  private boolean isPasswordChanged() {
      try {
          if (!_PASSWORD.equals(password.getEditText().getText().toString())) {
              Boolean checkuser = DB.updatePassword(_USERNAME, password.getEditText().getText().toString());
@@ -135,9 +154,9 @@ DBHelper DB;
          return false;
 
      }
-    }
+    }**/
 
-    private boolean isUserNameChanged() {
+    /** private boolean isUserNameChanged() {
 
         if (!_USERNAME.equals(username.getEditText().getText().toString())) {
 
@@ -149,9 +168,10 @@ DBHelper DB;
             return false;
         }
 
-    }
+    }**/
 
-    private void onClick(View view) {
+    private void onClick(View view)
+    {
         update();
     }
 }
