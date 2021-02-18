@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFDFD"
+    android:background="#F4F3EF"
     tools:context=".MainActivity">
 
     <Button
@@ -36,20 +36,20 @@
 
     <TextView
         android:id="@+id/titleRecycle"
-        android:layout_width="89dp"
-        android:layout_height="27dp"
+        android:layout_width="118dp"
+        android:layout_height="54dp"
         android:elevation="100dp"
         android:fontFamily="@font/lalezar"
         android:text="Go Recycle"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textColor="#F3B340"
+        android:textSize="25sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/GoRecyle"
         app:layout_constraintEnd_toStartOf="@+id/imgRecycle"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707"
+        app:layout_constraintVertical_bias="0.702"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -58,16 +58,16 @@
         android:layout_height="41dp"
         android:elevation="100dp"
         android:fontFamily="@font/bree_serif"
-        android:text="Identify items for recycling or compost"
+        android:text="Know where you can recycle your oil now!"
         android:textColor="#FFFEFC"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
         app:layout_constraintEnd_toStartOf="@+id/imgRecycle"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleRecycle"
-        app:layout_constraintVertical_bias="0.069"
+        app:layout_constraintVertical_bias="0.009"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -97,20 +97,20 @@
 
     <TextView
         android:id="@+id/titleLearn"
-        android:layout_width="89dp"
-        android:layout_height="27dp"
+        android:layout_width="111dp"
+        android:layout_height="40dp"
         android:elevation="100dp"
         android:fontFamily="@font/lalezar"
         android:text="Go Learn"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textColor="#F3B340"
+        android:textSize="25sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
         app:layout_constraintEnd_toStartOf="@+id/imgLearn"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.766"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814"
+        app:layout_constraintVertical_bias="0.834"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -119,16 +119,16 @@
         android:layout_height="41dp"
         android:elevation="100dp"
         android:fontFamily="@font/bree_serif"
-        android:text="Become a guru of recycling and using"
+        android:text="Learn the How , What and Why !"
         android:textColor="#FFFEFC"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/GoLearn"
         app:layout_constraintEnd_toStartOf="@+id/imgLearn"
-        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleLearn"
-        app:layout_constraintVertical_bias="0.313"
+        app:layout_constraintVertical_bias="0.305"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
