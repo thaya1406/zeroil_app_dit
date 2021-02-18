@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DIT</string>
+    <string name="app_name">ZerOil</string>
     <string name="oil_recycling_app">The only app for Oil Recycling</string>
     <string name="todo">The only app for Oil Recycling </string>
     <string name="trial">Trial</string>
@@ -44,7 +44,24 @@
     <string name="update">UPDATE</string>
     <string name="string_todo" />
     <string name="basic_information_on_handling_used_oil_at_home">Basic Information on Handling Used Oil at Home</string>
-    <string name="sample_page_title">Sample Page Title</string>
-    <string name="sample_page_content">Sample Page Content</string>
+    <string name="sample_page_title">Basic Information on Handling Used Oil at Home</string>
+    <string name="sample_page_content">       Recycling and reusing used motor oil is preferable to disposal and can provide great environmental benefits. Recycled used motor oil can be re-refined into new oil, processed into fuel oils, and used as raw materials for the petroleum industry.
+
+            Looking for a Place to Recycle your Used Oil?
+            Use the below resources to find recycling locations near you:
+
+            American Petroleum Institute Used Motor Oil Collection and Recycling Site EXIT
+            Compliance Assistance Center for Auto Repair EXIT
+            Environmental Compliance for Auto Recyclers EXIT
+            Earth 911 Recycling Search Tool EXIT
+
+            Used oils such as engine lubrication oil, hydraulic fluids, and gear oils used in cars, bikes, or lawnmowers can pollute the environment if they are not recycled or disposed of properly. Used oil must be managed properly by local waste management authorities or automotive repair shops to prevent contaminating the environment. Used oil filters pose similar waste concerns. If properly drained, they can be safely recycled or disposed.
+
+            Some of the many reasons to reuse and recycle used oil include:
+
+            - Recycling used oil keeps it from polluting soil and water.
+            - Motor oil does not wear out—it just gets dirty—so recycling it saves a valuable resource.
+            - Less energy is required to produce a gallon of re-refined base stock than a base stock from crude oil.
+            - One gallon of used motor oil provides the same 2.5 quarts of lubricating oil as 42 gallons of crude oil.</string>
 
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F3EF"
     tools:context=".UserProfile">
 
     <LinearLayout
@@ -13,65 +14,88 @@
 
 
         <!--First Section-->
+
+        <!--Second Section-->
+
+        <!--Third Section-->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@drawable/gradient_background"
             android:padding="20dp">
 
+            <ImageView
+                android:id="@+id/zeroil_logo"
+                android:layout_width="145dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="281dp"
+                android:layout_marginRight="281dp"
+                android:contentDescription="@string/string_todo"
+                android:src="@drawable/zeroillogo" />
 
             <ImageView
                 android:id="@+id/profile_image"
                 android:layout_width="145dp"
                 android:layout_height="155dp"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="123dp"
                 android:layout_marginEnd="123dp"
-                android:layout_marginBottom="108dp"
-                android:src="@drawable/user"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentLeft="true"
-                android:contentDescription="@string/string_todo" />
+                android:contentDescription="@string/string_todo"
+                android:src="@drawable/user" />
 
             <TextView
                 android:id="@+id/fullname_field"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="336dp"
+                android:layout_height="35dp"
                 android:layout_alignBottom="@+id/profile_image"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="93dp"
-                android:layout_marginBottom="43dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginLeft="46dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginRight="34dp"
+                android:layout_marginBottom="32dp"
                 android:fontFamily="@font/bungee"
+                android:gravity="center_horizontal"
                 android:includeFontPadding="false"
                 android:text="@string/user_full_name"
                 android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:layout_marginStart="93dp" />
+                android:textColor="#364C63"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/username_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="150dp"
-                android:layout_marginBottom="23dp"
+                android:layout_marginStart="116dp"
+                android:layout_marginLeft="169dp"
+                android:layout_marginBottom="8dp"
                 android:includeFontPadding="false"
                 android:text="@string/user_name"
-                android:textColor="#504F4F"
-                android:textSize="14sp"
-                android:layout_marginLeft="150dp"
-                android:layout_alignParentLeft="true" />
+                android:textColor="#F3B340"
+                android:textSize="30sp" />
 
         </RelativeLayout>
 
-        <!--Second Section-->
-
-        <!--Third Section-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="436dp"
@@ -142,18 +166,21 @@
 
 
 
-
             <Button
                 android:id="@+id/updatebtn"
                 android:layout_width="371dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/round_button"
+                android:radius="300pt"
+                android:backgroundTint="#F3B340"
+                android:textColor="#364C63"
                 android:fontFamily="@font/suez_one"
                 android:gravity="center_horizontal"
                 android:text="@string/update"
                 android:textAlignment="center"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="25sp"
+                tools:ignore="UnusedAttribute" />
 
         </LinearLayout>
 

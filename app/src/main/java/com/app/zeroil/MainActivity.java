@@ -22,18 +22,18 @@ public class MainActivity extends AppCompatActivity {
     //Variables
     Animation topAnim, bottomAnim;
     ImageView image;
-    TextView logo, slogan;
+    TextView  slogan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //This Line will hide the status bar from the screen
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        //This Line will hide the status bar from the screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
 
         //Hooks
         image = findViewById(R.id.imageView);
-        logo = findViewById(R.id.textView);
         slogan = findViewById(R.id.textView2);
 
         //Animations
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         image.setAnimation(topAnim);
-        logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
         ConstraintLayout layout = findViewById(R.id.layout);
@@ -53,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
                 //Attach all the elements those you want to animate in design
-                Pair[]  pairs = new Pair[2];
+                Pair[]  pairs = new Pair[1];
                 pairs[0] = new Pair<View,String>(image, "logo_image");
-                pairs[1] = new Pair<View,String>(logo, "logo_text");
 
                 //wrap the call in API level 21 or higher
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
@@ -72,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
                 //Attach all the elements those you want to animate in design
-                Pair[]  pairs = new Pair[2];
+                Pair[]  pairs = new Pair[1];
                 pairs[0] = new Pair<View,String>(image, "logo_image");
-                pairs[1] = new Pair<View,String>(logo, "logo_text");
 
                 //wrap the call in API level 21 or higher
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {

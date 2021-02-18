@@ -25,7 +25,6 @@ public class HomePageActivity extends AppCompatActivity {
         btnrecycle = (Button) findViewById(R.id.GoRecyle);
         btngolearn = (Button) findViewById(R.id.GoLearn);
         btn_profile = (ImageButton) findViewById(R.id.profile_button);
-        btn_home = (ImageButton) findViewById(R.id.home_button);
         btn_logout = (ImageButton) findViewById(R.id.logout_button);
 
         btnrecycle.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +64,6 @@ public class HomePageActivity extends AppCompatActivity {
 
 
 
-        btn_home.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(HomePageActivity.this,"You're already at the homepage", Toast.LENGTH_LONG).show();
-            }
-
-        });
 
         btn_logout.setOnClickListener(new View.OnClickListener(){
             @Override

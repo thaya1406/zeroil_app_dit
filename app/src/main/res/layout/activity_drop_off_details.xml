@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DropOffDetails">
+    tools:context=".DropOffDetails"
+    android:background="#F4F3EF"
+    >
 
     <TextView
         android:id="@+id/name"
@@ -13,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginBottom="20dp"
         android:textSize="17sp"
-        android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.453"
@@ -27,8 +29,8 @@
         android:layout_below="@id/name"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:textColor="#343434"
         android:textSize="14sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +44,7 @@
         android:layout_below="@id/address"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:textColor="#343434"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +61,7 @@
         android:layout_below="@id/contact"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="100dp"
-        android:textColor="#343434"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,36 +82,30 @@
         tools:ignore="MissingConstraints" />
 
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/drive_now"
-        app:layout_constraintBottom_toTopOf="@+id/name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.542" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/location_name"
+        android:textColor="#364C63"
+        android:textSize="18sp"
         android:textStyle="bold"
+
         app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintVertical_bias="0.775" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/address"
+        android:textColor="#364C63"
+
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/address"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,6 +119,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contact"
+        android:textColor="#364C63"
+
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/contact"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +135,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
+        android:textColor="#364C63"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"

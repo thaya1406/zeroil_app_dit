@@ -66,7 +66,7 @@ public class DropOffDetails extends AppCompatActivity implements OnMapReadyCallb
 
         googleMap.addMarker(new MarkerOptions()
                 .position(add)
-                .title("LinkedIn")
+                .title(s_name)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
         UiSettings mUiSettings = googleMap.getUiSettings();

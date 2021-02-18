@@ -191,7 +191,7 @@ public class UserProfile extends AppCompatActivity {
             strSQL = String.format("UPDATE  users  SET username = '%s' WHERE username = '%s'",ustochnage,untoserach);
             MyDB.execSQL(strSQL);
             _USERNAME = username.getEditText().getText().toString();
-            fullName.getEditText().setText(_USERNAME);
+            username.getEditText().setText(_USERNAME);
             usernameLabel.setText(_USERNAME);
             untoserach=ustochnage;
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
