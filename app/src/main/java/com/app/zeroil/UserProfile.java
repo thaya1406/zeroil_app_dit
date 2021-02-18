@@ -1,10 +1,7 @@
 package com.app.zeroil;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
-import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -26,6 +23,9 @@ public class UserProfile extends AppCompatActivity {
     //Global Variables to hold user data inside this activity
     String _USERNAME, _NAME, _EMAIL, _PASSWORD,untoserach;
     SharedPreferences prf;
+    SharedPreferences.Editor editor ;
+    Context context;
+
 
 
     public static final String TABLE_USERS = "users";
@@ -62,53 +62,6 @@ public class UserProfile extends AppCompatActivity {
            @Override
            public void onClick(View view) {
              Toast.makeText(UserProfile.this, "Data Updated Succesfully",Toast.LENGTH_LONG).show();
-
-
-        /**   if (username.getEditText().getText().toString().isEmpty()) {
-         username.setError("Field cannot be empty");
-         } else {
-         String ustochnage = username.getEditText().getText().toString();
-         String strSQL;
-         strSQL = String.format("UPDATE  users  SET username = '%s' WHERE username = '%s'",ustochnage,untoserach);
-         MyDB.execSQL(strSQL);
-         _USERNAME = username.getEditText().getText().toString();
-         username.getEditText().setText(_USERNAME);
-         }
-
-
-         if (password.getEditText().getText().toString().isEmpty()) {
-         password.setError("Field cannot be empty");
-         } else {
-         String pstochange = password.getEditText().getText().toString();
-         String strSQL;
-         strSQL = String.format("UPDATE  users  SET password = '%s' WHERE username = '%s'",pstochange,untoserach);
-         MyDB.execSQL(strSQL);
-         _PASSWORD = password.getEditText().getText().toString();
-         password.getEditText().setText(_PASSWORD);
-         }
-
-
-         if (email.getEditText().getText().toString().isEmpty()) {
-         email.setError("Field cannot be empty");
-         } else {
-         String emtochange = email.getEditText().getText().toString();
-         String strSQL;
-         strSQL = String.format("UPDATE  users  SET email = '%s' WHERE username = '%s'",emtochange,untoserach);
-         MyDB.execSQL(strSQL);
-         _EMAIL = email.getEditText().getText().toString();
-         email.getEditText().setText(_EMAIL);
-         }
-
-         if (fullName.getEditText().getText().toString().isEmpty()) {
-         fullName.setError("Field cannot be empty");
-         } else {
-         String emtochange = fullName.getEditText().getText().toString();
-         String strSQL;
-         strSQL = String.format("UPDATE  users  SET fname = '%s' WHERE username = '%s'",emtochange,untoserach);
-         MyDB.execSQL(strSQL);
-         _NAME = fullName.getEditText().getText().toString();
-         fullName.getEditText().setText(_NAME);
-         }**/
 
                update( );
            }
@@ -164,7 +117,6 @@ public class UserProfile extends AppCompatActivity {
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
 
         }
-        else Toast.makeText(this, "Data is same and can not be updated", Toast.LENGTH_LONG).show();
 
     }
 
@@ -175,7 +127,6 @@ public class UserProfile extends AppCompatActivity {
             strSQL = String.format("UPDATE  users  SET password = '%s' WHERE username = '%s'",pstochange,untoserach);
             MyDB.execSQL(strSQL);
             _PASSWORD = password.getEditText().getText().toString();
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
 
             return true;
         } else {
@@ -187,14 +138,20 @@ public class UserProfile extends AppCompatActivity {
 
         if (!_USERNAME.equals(username.getEditText().getText().toString())) {
             String ustochnage = username.getEditText().getText().toString();
+            String nametoearch= fullName.getEditText().getText().toString();
             String strSQL;
-            strSQL = String.format("UPDATE  users  SET username = '%s' WHERE username = '%s'",ustochnage,untoserach);
+            strSQL = String.format("UPDATE  users  SET username = '%s' WHERE fname = '%s'",ustochnage,nametoearch);
             MyDB.execSQL(strSQL);
             _USERNAME = username.getEditText().getText().toString();
             username.getEditText().setText(_USERNAME);
             usernameLabel.setText(_USERNAME);
             untoserach=ustochnage;
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
+
+         /**   SharedPreferences settings = context.getSharedPreferences("username", Context.MODE_PRIVATE);
+            settings.edit().clear().commit();
+            editor = prf.edit();
+            editor.putString("username",untoserach);
+            editor.commit();**/
 
             return true;
         } else {
@@ -214,9 +171,7 @@ public class UserProfile extends AppCompatActivity {
             _NAME = fullName.getEditText().getText().toString();
             fullName.getEditText().setText(_NAME);
             fullNameLabel.setText(_NAME);
-
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-
+            fullName.setError(null);
             return true;
         } else {
             return false;
@@ -230,12 +185,10 @@ public class UserProfile extends AppCompatActivity {
         if (!_EMAIL.equals(email.getEditText().getText().toString())) {
             String emtochange = email.getEditText().getText().toString();
             String strSQL;
-            strSQL = String.format("UPDATE  users  SET fname = '%s' WHERE username = '%s'",emtochange,untoserach);
+            strSQL = String.format("UPDATE  users  SET email = '%s' WHERE username = '%s'",emtochange,untoserach);
             MyDB.execSQL(strSQL);
             _EMAIL = email.getEditText().getText().toString();
             email.getEditText().setText(_EMAIL);
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-
             return true;
         } else {
             return false;

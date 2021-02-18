@@ -5,11 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/zeroillogo"
+        android:roundIcon="@drawable/zeroillogo"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DIT">
         <activity
@@ -18,9 +21,13 @@
         <activity
             android:name="com.app.zeroil.DropOff"
             android:label="Go Recycle" />
-        <activity android:name="com.app.zeroil.Success" />
-        <activity android:name="com.app.zeroil.SignUp" />
-        <activity android:name="com.app.zeroil.LoginActivity" />
+        <activity android:name="com.app.zeroil.Success"
+            />
+        <activity android:name="com.app.zeroil.SignUp"
+            />
+
+        <activity android:name="com.app.zeroil.LoginActivity"
+          />
         <activity android:name="com.app.zeroil.LearningPage"
             android:label="Go Learn"/>
         <activity android:name="com.app.zeroil.ContentDetails" />
@@ -28,7 +35,8 @@
             android:label="Drop Off Details"/>
         <activity android:name="com.app.zeroil.UserProfile"
             android:label="Profile Page"/>
-        <activity android:name="com.app.zeroil.MainActivity">
+        <activity android:name="com.app.zeroil.MainActivity"
+            >
 
 
         <intent-filter>
