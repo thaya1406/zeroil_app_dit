@@ -28,9 +28,8 @@
         <activity android:name=".SignUp" />
         <activity android:name=".LoginActivity" />
         <activity
-            android:name=".LearningPage"
+            android:name=".GoLearn"
             android:label="Go Learn" />
-        <activity android:name=".ContentDetails" />
         <activity
             android:name=".DropOffDetails"
             android:label="Drop Off Details" />

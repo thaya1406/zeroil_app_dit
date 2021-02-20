@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;
 
-    // Go Learn Page
-    RecyclerView recyclerView;
-    Adapter adapter;
 
     //Variables
     Animation topAnim, bottomAnim;
@@ -36,16 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Go Learn Page
-        String[] titles = getResources().getStringArray(R.array.page_title_list);
-        String[] content = getResources().getStringArray(R.array.description);
-//        int[] images = {R.drawable.used_oil, R.drawable.used_oil2, R.drawable.used_oil3, R.drawable.used_oil4, R.drawable.used_oil5, R.drawable.used_oil6};
 
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new Adapter(this, titles, content);
-        recyclerView.setAdapter(adapter);
 
         //This Line will hide the status bar from the screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);

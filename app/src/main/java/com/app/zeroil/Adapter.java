@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -24,6 +25,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 //    private int[] sImages;
 
 
+    Adapter() {
+
+
+//        this.sImages = images;
+    }
     //    Adapter(Context context, List<String> data, List<String>data2, int images) {
     Adapter(Context context, String[] data, String[] data2) {
 
@@ -37,6 +43,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = layoutInflatter.inflate(R.layout.custom_view, parent, false);
+
         return new ViewHolder(view);
     }
 
