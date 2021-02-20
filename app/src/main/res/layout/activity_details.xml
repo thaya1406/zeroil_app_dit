@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContentDetails"
-    android:background="#ccc">
+    tools:context=".Details"
+    android:background="#F4F3EF"
+    >
 
     <ImageView
         android:id="@+id/contentImage"
@@ -34,7 +35,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#F4F3EF"
+            >
 
             <TextView
                 android:id="@+id/title_txt"
