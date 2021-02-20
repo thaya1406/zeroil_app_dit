@@ -61,7 +61,6 @@ public class UserProfile extends AppCompatActivity {
         updatebtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-             Toast.makeText(UserProfile.this, "Data Updated Succesfully",Toast.LENGTH_LONG).show();
 
                update( );
            }
