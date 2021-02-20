@@ -27,7 +27,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-        <string name="google_maps_api_key">AIzaSyB6NZyr_JxOSUdExObq4-9IE8ja-3ZWyjE</string>
+    <string name="google_maps_api_key">AIzaSyB6NZyr_JxOSUdExObq4-9IE8ja-3ZWyjE</string>
     <string name="drive_now">Drive Now</string>
     <string name="location_name">Location Name</string>
     <string name="address">Address</string>

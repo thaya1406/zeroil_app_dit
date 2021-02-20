@@ -42,7 +42,7 @@ public class HomePageActivity extends AppCompatActivity {
         btngolearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(getApplicationContext(), LearningPage.class);
+                Intent intent  = new Intent(getApplicationContext(), Adapter.class);
                    startActivity(intent);
 
             }

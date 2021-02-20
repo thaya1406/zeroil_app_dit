@@ -3,35 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F4F3EF"
-    android:padding="10dp"
-    >
+    android:layout_height="wrap_content"
+    android:background="#ccc"
+    android:padding="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="389dp"
         android:layout_height="233dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
             android:layout_width="match_parent"
             android:layout_height="740dp"
             android:padding="5dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/background"
                 android:layout_width="349dp"
                 android:layout_height="176dp"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="31dp"
                 android:layout_marginBottom="24dp"
-                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,18 +40,31 @@
 
             <TextView
                 android:id="@+id/contentTitle"
-                android:layout_width="179dp"
-                android:layout_height="123dp"
+                android:layout_width="243dp"
+                android:layout_height="89dp"
                 android:layout_marginStart="40dp"
-                android:text="@string/basic_information_on_handling_used_oil_at_home"
+                android:text="Sample Page Title"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintBottom_toBottomOf="@+id/background"
+                app:layout_constraintStart_toStartOf="@+id/background"
+                app:layout_constraintTop_toTopOf="@+id/background"
+                app:layout_constraintVertical_bias="0.195" />
+
+            <TextView
+                android:id="@+id/contentDesc"
+                android:layout_width="278dp"
+                android:layout_height="34dp"
+                android:text="Sample Description"
+                app:layout_constraintBottom_toBottomOf="@+id/background"
+                app:layout_constraintStart_toStartOf="@+id/contentTitle"
+                app:layout_constraintTop_toBottomOf="@+id/contentTitle"
+                app:layout_constraintVertical_bias="0.277"
+                android:maxLength="80"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
